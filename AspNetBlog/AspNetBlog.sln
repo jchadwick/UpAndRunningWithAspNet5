@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E4A3993D-349D-4E9F-A8B9-142C6DA5A274}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{846F182A-3EB4-45FD-9B9F-4C7120BE026B}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AspNetBlog", "src\AspNetBlog\AspNetBlog.xproj", "{AF4D2459-C1CE-4441-BBD0-C7EB6FA80BC9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF4D2459-C1CE-4441-BBD0-C7EB6FA80BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF4D2459-C1CE-4441-BBD0-C7EB6FA80BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF4D2459-C1CE-4441-BBD0-C7EB6FA80BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF4D2459-C1CE-4441-BBD0-C7EB6FA80BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AF4D2459-C1CE-4441-BBD0-C7EB6FA80BC9} = {E4A3993D-349D-4E9F-A8B9-142C6DA5A274}
+	EndGlobalSection
+EndGlobal
