@@ -17,20 +17,7 @@ namespace AspNetBlog
 
         public void Configure(IApplicationBuilder app)
         {
-            app.Use(async (context, next) =>
-            {
-                if (context.Request.Path.Value.StartsWith("/hello"))
-                {
-                    await context.Response.WriteAsync("How are you?");
-                }
-                await next();
-            });
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello ASP.NET 5!");
-            });
-
+            app.UseFileServer();
         }
     }
 }
