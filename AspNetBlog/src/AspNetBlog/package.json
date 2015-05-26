@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "name": "AspNetBlog",
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-uglifycss": "^1.0.4",
+    "del": "^1.2.0"
+  }
+}
