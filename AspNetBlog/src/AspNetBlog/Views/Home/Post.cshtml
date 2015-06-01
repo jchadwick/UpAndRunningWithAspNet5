@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<div class='blog-post'>
+    <h2 class='title'>
+        <a href="#">@ViewBag.Title</a>
+    </h2>
+    <p class='metadata'>
+        <span>@ViewBag.Posted</span>
+        by <a class="author" href='#'>@ViewBag.Author</a>
+    </p>
+    <section class="body">
+        @ViewBag.Body
+    </section>
+</div><!-- /.blog-post -->
