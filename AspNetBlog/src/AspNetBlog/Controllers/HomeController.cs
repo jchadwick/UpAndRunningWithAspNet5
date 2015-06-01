@@ -11,9 +11,9 @@ namespace AspNetBlog.Controllers
     public class HomeController : Controller
     {
         // GET: /<controller>/
-        public string Index()
+        public IActionResult Index()
         {
-            return "Hello, ASP.NET MVC!";
+            return View();
         }
 
         public int Echo(int id)
