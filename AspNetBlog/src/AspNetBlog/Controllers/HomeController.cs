@@ -15,5 +15,10 @@ namespace AspNetBlog.Controllers
         {
             return "Hello, ASP.NET MVC!";
         }
+
+        public int Echo(int id)
+        {
+            return id;
+        }
     }
 }
