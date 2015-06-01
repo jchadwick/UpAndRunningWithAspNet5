@@ -7,7 +7,7 @@
     <meta name="description" content="Demo blog application to show how to build an ASP.NET 5 application">
     <meta name="author" content="Jess Chadwick">
     <title>My ASP.NET 5 Blog</title>
-    <link href="blog.css" rel="stylesheet">
+    <link href="/lib/site.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -35,56 +35,7 @@
 
             <div class="col-sm-8 blog-main">
 
-                <div class='blog-post'>
-                    <h2 class='title'>
-                        <a href="#">Setting up your development environment</a>
-                    </h2>
-                    <p class='metadata'>
-                        <span>June 18th, 2015</span>
-                        by <a class="author" href='#'>Jess</a>
-                    </p>
-                    <section class="body">
-                        <p>
-                            There are a few things you'll need installed and configured
-                            on your machine before you're able to work with ASP.NET 5:
-
-                            <ul>
-                                <li>Windows 7 or Windows Server 2008 R2 and above</li>
-                                <li>Visual Studio 2015 (Community Edition or above)</li>
-                                <li>Web Essentials Visual Studio extension</li>
-                            </ul>
-                        </p>
-                        <p>
-                            Once you have those things installed, come on back for the
-                            next blog post and we'll start creating your new project!
-                        </p>
-                    </section>
-                </div><!-- /.blog-post -->
-
-                <div class='blog-post'>
-                    <h2 class='title'>
-                        <a href="#">Welcome to my blog!</a>
-                    </h2>
-                    <p class='metadata'>
-                        <span>June 16th, 2015</span>
-                        by <a class="author" href='#'>Jess</a>
-                    </p>
-                    <section class="body">
-                        <p>Hello, and welcome to my blog!</p>
-                        <p>
-                            I have spent a lot of time curating some of the best information
-                            available on building and maintaining ASP.NET 5 web applications
-                            and I hope you find it useful!
-                        </p>
-                    </section>
-                </div><!-- /.blog-post -->
-
-                <nav class="hide">
-                    <ul class="pager">
-                        <li><a href="#">Previous</a></li>
-                        <li><a href="#">Next</a></li>
-                    </ul>
-                </nav>
+               @RenderBody()
 
             </div><!-- /.blog-main -->
 
@@ -125,5 +76,6 @@
             <a href="#">Back to top</a>
         </p>
     </footer>
+    <script src="/lib/third-party.js"></script>
 </body>
 </html>
