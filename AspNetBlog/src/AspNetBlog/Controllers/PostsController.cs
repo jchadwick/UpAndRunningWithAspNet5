@@ -26,6 +26,9 @@ namespace AspNetBlog.Controllers
         [HttpPost]
         public IActionResult Create(Post post)
         {
+            if (!ModelState.IsValid)
+                return View(post);
+
             post.PostedDate = DateTime.Now;
             post.Author = User.Identity.Name;
 
