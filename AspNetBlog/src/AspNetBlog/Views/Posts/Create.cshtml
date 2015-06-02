@@ -1,0 +1,20 @@
+﻿@model AspNetBlog.Models.Post
+@{
+    Layout = "_Layout";
+}
+
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.Title)
+        @Html.EditorFor(x => x.Title)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Body)
+        @Html.TextAreaFor(x => x.Body)
+    </div>
+
+    <button class="btn btn-default" type="submit">Create Post</button>
+}
