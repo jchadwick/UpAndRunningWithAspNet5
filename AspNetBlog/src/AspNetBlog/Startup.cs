@@ -15,6 +15,7 @@ namespace AspNetBlog
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddScoped<AspNetBlog.Models.BlogDataContext>();
         }
 
         public void Configure(IApplicationBuilder app)

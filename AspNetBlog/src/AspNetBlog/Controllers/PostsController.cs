@@ -11,6 +11,13 @@ namespace AspNetBlog.Controllers
 {
     public class PostsController : Controller
     {
+        readonly BlogDataContext _dataContext;
+
+        public PostsController(BlogDataContext dataContext)
+        {
+            _dataContext = dataContext;
+        }
+
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -32,18 +39,15 @@ namespace AspNetBlog.Controllers
             post.PostedDate = DateTime.Now;
             post.Author = User.Identity.Name;
 
-            var db = new BlogDataContext();
-            db.Posts.Add(post);
-            await db.SaveChangesAsync();
+            _dataContext.Posts.Add(post);
+            await _dataContext.SaveChangesAsync();
 
             return RedirectToAction("Post", new { id = post.Id });
         }
 
         public IActionResult Post(long id)
         {
-            var db = new BlogDataContext();
-
-            var post = db.Posts.SingleOrDefault(x => x.Id == id);
+            var post = _dataContext.Posts.SingleOrDefault(x => x.Id == id);
 
             return View(post);
         }
