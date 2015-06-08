@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
 using Microsoft.Framework.DependencyInjection;
+using Microsoft.Framework.ConfigurationModel;
 
 namespace AspNetBlog
 {
@@ -18,10 +19,23 @@ namespace AspNetBlog
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseErrorPage();
-            app.UseRuntimeInfoPage();
+            var config = new Configuration();
+            config.AddEnvironmentVariables();
+            config.AddJsonFile("config.json");
+            config.AddJsonFile("config.dev.json", true);
+            config.AddUserSecrets();
 
-            app.UseErrorHandler("/home/error");
+            var password = config.Get("password");
+
+            if (config.Get<bool>("debug"))
+            {
+                app.UseErrorPage();
+                app.UseRuntimeInfoPage();
+            }
+            else
+            {
+                app.UseErrorHandler("/home/error");
+            }
 
             app.UseMvc(routes => routes.MapRoute(
                 "Default", "{controller=Home}/{action=Index}/{id?}"));

@@ -9,7 +9,10 @@
       "Microsoft.AspNet.Mvc >= 6.0.0-beta4",
       "Microsoft.AspNet.Mvc.TagHelpers >= 6.0.0-beta4",
       "EntityFramework.SqlServer >= 7.0.0-beta4",
-      "Microsoft.AspNet.Diagnostics >= 1.0.0-beta4"
+      "Microsoft.AspNet.Diagnostics >= 1.0.0-beta4",
+      "Microsoft.Framework.ConfigurationModel >= 1.0.0-beta4",
+      "Microsoft.Framework.ConfigurationModel.UserSecrets >= 1.0.0-beta4",
+      "Microsoft.Framework.ConfigurationModel.Json >= 1.0.0-beta4"
     ],
     "DNX,Version=v4.5.1": [],
     "DNXCore,Version=v5.0": []
@@ -2415,6 +2418,99 @@
         "lib/net45/Microsoft.Framework.ConfigurationModel.Interfaces.xml",
         "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.Interfaces.dll",
         "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.Interfaces.xml"
+      ]
+    },
+    "Microsoft.Framework.ConfigurationModel.Json/1.0.0-beta4": {
+      "serviceable": true,
+      "sha": "ygdShf5lzRsqe7/pMNSaiq6AcAy0eIhp8WFUtYfqQnsxhMJFcw/VlIFvie8+DkYhacdmGkXTF4OGopjjwfg02A==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Newtonsoft.Json": "6.0.6",
+            "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4"
+          },
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Newtonsoft.Json": "6.0.6",
+            "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Json.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Json.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.ConfigurationModel.Json.1.0.0-beta4.nupkg",
+        "Microsoft.Framework.ConfigurationModel.Json.1.0.0-beta4.nupkg.sha512",
+        "Microsoft.Framework.ConfigurationModel.Json.nuspec",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.dll",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.xml",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Json.dll",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Json.xml",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.Json.dll",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.Json.xml"
+      ]
+    },
+    "Microsoft.Framework.ConfigurationModel.UserSecrets/1.0.0-beta4": {
+      "serviceable": true,
+      "sha": "CGHtX5TWljgdAPOpavS7xm6C/1bJJQ/a7gD/+FDTvk260LMfL0zAaFSg3M7VRW8AWLAB4fKlffUPVFHspQ1NIQ==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta4"
+          },
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.UserSecrets.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.UserSecrets.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta4",
+            "System.Runtime": "4.0.20-beta-22816"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.UserSecrets.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.UserSecrets.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.ConfigurationModel.UserSecrets.1.0.0-beta4.nupkg",
+        "Microsoft.Framework.ConfigurationModel.UserSecrets.1.0.0-beta4.nupkg.sha512",
+        "Microsoft.Framework.ConfigurationModel.UserSecrets.nuspec",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.UserSecrets.dll",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.UserSecrets.xml",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.UserSecrets.dll",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.UserSecrets.xml"
       ]
     },
     "Microsoft.Framework.DependencyInjection/1.0.0-beta4": {

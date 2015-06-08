@@ -1,4 +1,5 @@
 ﻿{
+  "userSecretsId": "aspnet5-AspNetBlog-20150608025315",
   "webroot": "wwwroot",
   "version": "1.0.0-*",
 
@@ -9,11 +10,14 @@
     "Microsoft.AspNet.Mvc": "6.0.0-beta4",
     "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta4",
     "EntityFramework.SqlServer": "7.0.0-beta4",
-    "Microsoft.AspNet.Diagnostics": "1.0.0-beta4"
+    "Microsoft.AspNet.Diagnostics": "1.0.0-beta4",
+    "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4",
+    "Microsoft.Framework.ConfigurationModel.UserSecrets": "1.0.0-beta4",
+    "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta4"
   },
 
   "commands": {
-      "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000"
+    "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000"
   },
 
   "frameworks": {
