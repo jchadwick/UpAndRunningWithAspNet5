@@ -38,9 +38,19 @@ namespace AspNetBlog.Controllers
             return View(posts);
         }
 
+        public IActionResult Error()
+        {
+            return View();
+        }
+
         public int Echo(int id)
         {
             return id;
+        }
+
+        public IActionResult CauseAnError()
+        {
+            throw new Exception("Error!");
         }
     }
 }

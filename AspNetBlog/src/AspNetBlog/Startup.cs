@@ -18,6 +18,11 @@ namespace AspNetBlog
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseErrorPage();
+            app.UseRuntimeInfoPage();
+
+            app.UseErrorHandler("/home/error");
+
             app.UseMvc(routes => routes.MapRoute(
                 "Default", "{controller=Home}/{action=Index}/{id?}"));
 
