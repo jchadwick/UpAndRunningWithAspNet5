@@ -8,6 +8,8 @@ namespace AspNetBlog.Models
 {
     public class Post
     {
+        public long Id { get; set; }
+
         [Required]
         [DataType(DataType.Text)]
         [Display(Name = "Blog post title")]
