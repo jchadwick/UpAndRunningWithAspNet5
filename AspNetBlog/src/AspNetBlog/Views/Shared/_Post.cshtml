@@ -1,7 +1,7 @@
 ﻿@inject AspNetBlog.Models.FormattingService Format
 @model AspNetBlog.Models.Post
 
-<div class='blog-post'>
+<div class='blog-post' data-post-id="@Model.Id">
     <h2 class='title'>
         <a href="#">@Model.Title</a>
     </h2>
@@ -12,4 +12,25 @@
     <section class="body">
         @Model.Body
     </section>
+    <hr />
+    <footer>
+        <a href="#" class="show-comments">Show Comments</a>
+        <div class="comments-container hide">
+            <h3>Comments</h3>
+            <div class="comments">
+            </div>
+            <hr />
+            <div>
+                <a href="#" class="add-comment">Add a comment</a>
+                <div class="new-comment hide">
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea name="Body" class="new-comment form-control" placeholder="Enter comment here..."></textarea>
+                            <button type="submit" class="btn btn-default">Create Comment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div><!-- /.blog-post -->

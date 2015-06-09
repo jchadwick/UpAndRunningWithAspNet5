@@ -29,6 +29,15 @@ namespace AspNetBlog
 
             var password = config.Get("password");
 
+            if (config.Get<bool>("RecreateDatabase"))
+            {
+                var context = app.ApplicationServices.GetService<Models.BlogDataContext>();
+                context.Database.EnsureDeleted();
+                System.Threading.Thread.Sleep(2000);
+                context.Database.EnsureCreated();
+            }
+
+
             if (config.Get<bool>("debug"))
             {
                 app.UseErrorPage();
