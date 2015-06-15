@@ -1,24 +1,24 @@
-﻿@model AspNetBlog.Models.Post
+﻿@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
+@model AspNetBlog.Models.Post
 @{
     Layout = "_Layout";
 }
 
 
-@using (Html.BeginForm())
-{
-    @Html.ValidationSummary()
+<form asp-action="Create">
+    <div asp-validation-summary="ValidationSummary.All" class="input-validation-error"></div>
 
     <div class="form-group">
-        @Html.LabelFor(x => x.Title)
-        @Html.EditorFor(x => x.Title)
-        @Html.ValidationMessageFor(x => x.Title)
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="field-validation-error"></span>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(x => x.Body)
-        @Html.EditorFor(x => x.Body)
-        @Html.ValidationMessageFor(x => x.Body)
+        <label asp-for="Body"></label>
+        <input asp-for="Body" class="form-control" />
+        <span asp-validation-for="Body" class="field-validation-error"></span>
     </div>
 
     <button class="btn btn-default" type="submit">Create Post</button>
-}
+</form>
