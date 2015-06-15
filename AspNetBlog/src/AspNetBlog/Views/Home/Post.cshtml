@@ -1,17 +1,5 @@
-﻿@model AspNetBlog.Models.Post
-@{
+﻿@{
     Layout = "_Layout";
 }
 
-<div class='blog-post'>
-    <h2 class='title'>
-        <a href="#">@Model.Title</a>
-    </h2>
-    <p class='metadata'>
-        <span>@Model.PostedDate</span>
-        by <a class="author" href='#'>@Model.Author</a>
-    </p>
-    <section class="body">
-        @Model.Body
-    </section>
-</div><!-- /.blog-post -->
+@Html.Partial("_Post")
