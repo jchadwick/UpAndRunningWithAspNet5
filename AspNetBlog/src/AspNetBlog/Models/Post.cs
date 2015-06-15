@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace AspNetBlog.Models
@@ -9,6 +10,18 @@ namespace AspNetBlog.Models
     public class Post
     {
         public long Id { get; set; }
+
+        public string Key
+        {
+            get
+            {
+                if (Title == null)
+                    return null;
+
+                var key = Regex.Replace(Title, @"[^a-zA-Z0-9\- ]", string.Empty);
+                return key.Replace(" ", "-").ToLower();
+            }
+        }
 
         [Required]
         [DataType(DataType.Text)]
