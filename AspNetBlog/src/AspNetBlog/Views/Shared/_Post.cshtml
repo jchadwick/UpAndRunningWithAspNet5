@@ -1,11 +1,12 @@
-﻿@model AspNetBlog.Models.Post
+﻿@inject AspNetBlog.Models.FormattingService Format
+@model AspNetBlog.Models.Post
 
 <div class='blog-post'>
     <h2 class='title'>
         <a href="#">@Model.Title</a>
     </h2>
     <p class='metadata'>
-        <span>@Model.PostedDate</span>
+        <span>@Format.AsReadableDate(Model.PostedDate)</span>
         by <a class="author" href='#'>@Model.Author</a>
     </p>
     <section class="body">

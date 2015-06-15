@@ -16,6 +16,7 @@ namespace AspNetBlog
         {
             services.AddMvc();
             services.AddScoped<AspNetBlog.Models.BlogDataContext>();
+            services.AddTransient<AspNetBlog.Models.FormattingService>();
         }
 
         public void Configure(IApplicationBuilder app)
