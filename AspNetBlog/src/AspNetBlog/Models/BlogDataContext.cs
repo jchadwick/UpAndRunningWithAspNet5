@@ -8,6 +8,7 @@ namespace AspNetBlog.Models
 {
     public class BlogDataContext : DbContext
     {
+        public DbSet<Comment> Comments { get; set; }
         public DbSet<Post> Posts { get; set; }
 
         public BlogDataContext()
