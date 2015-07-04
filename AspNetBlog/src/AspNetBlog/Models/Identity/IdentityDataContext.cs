@@ -8,5 +8,10 @@ namespace AspNetBlog.Models.Identity
 {
     public class IdentityDataContext : IdentityDbContext<ApplicationUser>
     {
+
+        public IdentityDataContext()
+        {
+            Database.EnsureCreated();
+        }
     }
 }

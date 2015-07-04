@@ -6,6 +6,8 @@ using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.ConfigurationModel;
+using Microsoft.Data.Entity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace AspNetBlog
 {
@@ -16,7 +18,19 @@ namespace AspNetBlog
         {
             services.AddMvc();
             services.AddScoped<AspNetBlog.Models.BlogDataContext>();
+            services.AddScoped<AspNetBlog.Models.Identity.IdentityDataContext>();
             services.AddTransient<AspNetBlog.Models.FormattingService>();
+
+            string identityConnectionString =
+                "Server=(LocalDb)\\MSSQLLocalDb;Database=AspNetBlog_Identity";
+
+            services.AddEntityFramework()
+                .AddSqlServer()
+                .AddDbContext<Models.Identity.IdentityDataContext>(dbConfig =>
+                    dbConfig.UseSqlServer(identityConnectionString));
+
+            services.AddIdentity<Models.Identity.ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<Models.Identity.IdentityDataContext>();
         }
 
         public void Configure(IApplicationBuilder app)
@@ -37,6 +51,7 @@ namespace AspNetBlog
                 context.Database.EnsureCreated();
             }
 
+            app.UseIdentity();
 
             if (config.Get<bool>("debug"))
             {
