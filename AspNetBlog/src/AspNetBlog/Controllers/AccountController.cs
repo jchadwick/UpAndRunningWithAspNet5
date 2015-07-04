@@ -8,11 +8,14 @@ namespace AspNetBlog.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public AccountController(UserManager<ApplicationUser> userManager)
+        public AccountController(UserManager<ApplicationUser> userManager,
+                                 SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         [HttpGet]
@@ -29,13 +32,29 @@ namespace AspNetBlog.Controllers
                 return View(login);
             }
 
-            // TODO: Implement user authentication
+            var result = await _signInManager.PasswordSignInAsync(
+                login.EmailAddress,
+                login.Password,
+                login.RememberMe,
+                false);
+
+            if (!result.Succeeded)
+            {
+                return View(login);
+            }
+
+            if (string.IsNullOrWhiteSpace(returnUrl))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return Redirect(returnUrl);
         }
 
         [HttpPost]
         public IActionResult Logout(string returnUrl = null)
         {
-            // TODO: Sign out
+            _signInManager.SignOut();
 
             if (string.IsNullOrWhiteSpace(returnUrl))
                 return RedirectToAction("Index", "Home");

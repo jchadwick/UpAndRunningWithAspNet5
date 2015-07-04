@@ -51,6 +51,22 @@
                     <h4>Archives</h4>
                     @(Component.Invoke<AspNetBlog.ViewComponents.ArchivedPostsViewComponent>())
                 </div>
+
+                <div class="sidebar-module">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("Logout", "Account"))
+                        {
+                            <p>Logged in as: @User.Identity.Name</p>
+                            <button class="btn-link" type="submit">Logout</button>
+                        }
+                    }
+                    else {
+                        <p>Not logged in</p>
+                        <p>@Html.ActionLink("Login", "Login", "Account")</p>
+                    }
+                </div>
+
             </div><!-- /.blog-sidebar -->
 
         </div><!-- /.row -->
