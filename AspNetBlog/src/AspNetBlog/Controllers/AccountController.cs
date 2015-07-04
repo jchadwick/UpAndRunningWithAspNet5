@@ -16,6 +16,36 @@ namespace AspNetBlog.Controllers
         }
 
         [HttpGet]
+        public IActionResult Login()
+        {
+            return View(new LoginViewModel());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel login, string returnUrl = null)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View(login);
+            }
+
+            // TODO: Implement user authentication
+        }
+
+        [HttpPost]
+        public IActionResult Logout(string returnUrl = null)
+        {
+            // TODO: Sign out
+
+            if (string.IsNullOrWhiteSpace(returnUrl))
+                return RedirectToAction("Index", "Home");
+
+            return Redirect(returnUrl);
+        }
+
+
+
+        [HttpGet]
         public IActionResult Register()
         {
             return View(new RegisterViewModel());

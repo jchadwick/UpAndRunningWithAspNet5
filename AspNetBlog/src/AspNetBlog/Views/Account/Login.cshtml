@@ -1,0 +1,51 @@
+﻿@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
+@model AspNetBlog.Models.Account.LoginViewModel
+
+    <h2>Login</h2>
+
+    <br />
+
+    <div asp-validation-summary="ValidationSummary.All" class="input-validation-error"></div>
+
+    <form role="form" asp-action="Login">
+
+        <div class="form-group">
+            <label asp-for="EmailAddress"></label>
+            <input type="email" asp-for="EmailAddress" class="form-control" />
+            <span asp-validation-for="EmailAddress" class="field-validation-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input type="password" asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="field-validation-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ConfirmPassword"></label>
+            <input type="password" asp-for="ConfirmPassword" class="form-control" />
+            <span asp-validation-for="ConfirmPassword" class="field-validation-error"></span>
+        </div>
+
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" asp-for="RememberMe" />
+                    Remember me
+                </label>
+            </div>
+            <span asp-validation-for="RememberMe" class="field-validation-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Not Registered?</label>
+            <a asp-action="Register">Create a new account</a>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+
+    </form>
+
+    <br />
