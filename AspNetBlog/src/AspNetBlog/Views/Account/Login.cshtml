@@ -7,7 +7,7 @@
 
     <div asp-validation-summary="ValidationSummary.All" class="input-validation-error"></div>
 
-    <form role="form" asp-action="Login">
+    <form role="form" asp-action="Login" asp-antiforgery="true">
 
         <div class="form-group">
             <label asp-for="EmailAddress"></label>
