@@ -4,7 +4,6 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "RecreateDatabase": "true",
         "ASPNET_ENV": "Development"
       }
     }

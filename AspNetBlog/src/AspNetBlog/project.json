@@ -31,7 +31,8 @@
     "bower_components",
     "**.xproj",
     "**.user",
-    "**.vspscc"
+    "**.vspscc",
+    "**.dev.**"
   ],
   "exclude": [
     "wwwroot",
