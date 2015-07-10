@@ -1,4 +1,8 @@
 ﻿{
   "debug": true,
-  "RecreateDatabase":  true
+  "RecreateDatabase": true,
+  "Data": {
+    "BlogData": { "ConnectionString": "Server=(LocalDb)\\MSSQLLocalDb;Database=AspNetBlog" },
+    "Identity": { "ConnectionString": "Server=(LocalDb)\\MSSQLLocalDb;Database=AspNetBlog_Identity" }
+  }
 }

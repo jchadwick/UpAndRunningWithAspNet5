@@ -29,14 +29,6 @@ namespace AspNetBlog.Models
                     });
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-
-            var connectionString = @"Server=(LocalDb)\MSSQLLocalDb;Database=AspNetBlog";
-            optionsBuilder.UseSqlServer(connectionString);
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -13,6 +13,17 @@ namespace AspNetBlog
 {
     public class Startup
     {
+        private IConfiguration config;
+
+        public Startup()
+        {
+            config = new Configuration()
+                .AddEnvironmentVariables()
+                .AddJsonFile("config.json")
+                .AddJsonFile("config.dev.json", true)
+                .AddUserSecrets();
+        }
+
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
@@ -21,11 +32,13 @@ namespace AspNetBlog
             services.AddScoped<AspNetBlog.Models.Identity.IdentityDataContext>();
             services.AddTransient<AspNetBlog.Models.FormattingService>();
 
-            string identityConnectionString =
-                "Server=(LocalDb)\\MSSQLLocalDb;Database=AspNetBlog_Identity";
+            string blogDataConnectionString = config.Get("Data:BlogData:ConnectionString");
+            string identityConnectionString = config.Get("Data:Identity:ConnectionString");
 
             services.AddEntityFramework()
                 .AddSqlServer()
+                .AddDbContext<Models.BlogDataContext>(dbConfig =>
+                    dbConfig.UseSqlServer(blogDataConnectionString))
                 .AddDbContext<Models.Identity.IdentityDataContext>(dbConfig =>
                     dbConfig.UseSqlServer(identityConnectionString));
 
@@ -35,12 +48,6 @@ namespace AspNetBlog
 
         public void Configure(IApplicationBuilder app)
         {
-            var config = new Configuration();
-            config.AddEnvironmentVariables();
-            config.AddJsonFile("config.json");
-            config.AddJsonFile("config.dev.json", true);
-            config.AddUserSecrets();
-
             var password = config.Get("password");
 
             if (config.Get<bool>("RecreateDatabase"))
