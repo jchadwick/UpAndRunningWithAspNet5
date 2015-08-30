@@ -190,3 +190,4 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 /AspNetBlog/src/AspNetBlog/wwwroot/lib
+/AspNetBlog/src/AspNetBlog/project.lock.json
