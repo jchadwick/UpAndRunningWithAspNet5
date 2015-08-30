@@ -53,9 +53,9 @@ namespace AspNetBlog.Controllers
         }
 
         [HttpPost]
-        public IActionResult Logout(string returnUrl = null)
+        public async Task<IActionResult> Logout(string returnUrl = null)
         {
-            _signInManager.SignOut();
+            await _signInManager.SignOutAsync();
 
             if (string.IsNullOrWhiteSpace(returnUrl))
                 return RedirectToAction("Index", "Home");

@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
 using Microsoft.Framework.DependencyInjection;
-using Microsoft.Framework.ConfigurationModel;
+using Microsoft.Framework.Configuration;
 using Microsoft.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Framework.Runtime;
 
 namespace AspNetBlog
 {
@@ -15,13 +16,14 @@ namespace AspNetBlog
     {
         private IConfiguration config;
 
-        public Startup()
+        public Startup(IApplicationEnvironment env)
         {
-            config = new Configuration()
+            config = new ConfigurationBuilder(env.ApplicationBasePath)
                 .AddEnvironmentVariables()
                 .AddJsonFile("config.json")
                 .AddJsonFile("config.dev.json", true)
-                .AddUserSecrets();
+                .AddUserSecrets()
+                .Build();
         }
 
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
@@ -50,7 +52,7 @@ namespace AspNetBlog
         {
             var password = config.Get("password");
 
-            if (config.Get<bool>("RecreateDatabase"))
+            if (config.Get("RecreateDatabase") == "true")
             {
                 var context = app.ApplicationServices.GetService<Models.BlogDataContext>();
                 context.Database.EnsureDeleted();
@@ -60,7 +62,7 @@ namespace AspNetBlog
 
             app.UseIdentity();
 
-            if (config.Get<bool>("debug"))
+            if (config.Get("debug") == "true")
             {
                 app.UseErrorPage();
                 app.UseRuntimeInfoPage();

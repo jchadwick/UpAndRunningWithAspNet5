@@ -28,12 +28,5 @@ namespace AspNetBlog.Models
                         Month = group.Key.Month,
                     });
         }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-
-            modelBuilder.ForSqlServer().UseIdentity();
-        }
     }
 }
