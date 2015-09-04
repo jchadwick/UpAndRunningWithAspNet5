@@ -8,7 +8,7 @@ using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Configuration;
 using Microsoft.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.Framework.Runtime;
+using Microsoft.Dnx.Runtime;
 
 namespace AspNetBlog
 {
@@ -34,8 +34,8 @@ namespace AspNetBlog
             services.AddScoped<AspNetBlog.Models.Identity.IdentityDataContext>();
             services.AddTransient<AspNetBlog.Models.FormattingService>();
 
-            string blogDataConnectionString = config.Get("Data:BlogData:ConnectionString");
-            string identityConnectionString = config.Get("Data:Identity:ConnectionString");
+            string blogDataConnectionString = config["Data:BlogData:ConnectionString"];
+            string identityConnectionString = config["Data:Identity:ConnectionString"];
 
             services.AddEntityFramework()
                 .AddSqlServer()
@@ -50,9 +50,9 @@ namespace AspNetBlog
 
         public void Configure(IApplicationBuilder app)
         {
-            var password = config.Get("password");
+            var password = config["password"];
 
-            if (config.Get("RecreateDatabase") == "true")
+            if (config["RecreateDatabase"] == "true")
             {
                 var context = app.ApplicationServices.GetService<Models.BlogDataContext>();
                 context.Database.EnsureDeleted();
@@ -62,7 +62,7 @@ namespace AspNetBlog
 
             app.UseIdentity();
 
-            if (config.Get("debug") == "true")
+            if (config["debug"] == "true")
             {
                 app.UseErrorPage();
                 app.UseRuntimeInfoPage();
