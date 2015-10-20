@@ -18,7 +18,8 @@ namespace AspNetBlog
 
         public Startup(IApplicationEnvironment env)
         {
-            config = new ConfigurationBuilder(env.ApplicationBasePath)
+            config = new ConfigurationBuilder()
+                .SetBasePath(env.ApplicationBasePath)
                 .AddEnvironmentVariables()
                 .AddJsonFile("config.json")
                 .AddJsonFile("config.dev.json", true)
@@ -52,7 +53,7 @@ namespace AspNetBlog
         {
             var password = config["password"];
 
-            if (config["RecreateDatabase"] == "true")
+            if (config.Get<bool>("RecreateDatabase"))
             {
                 var context = app.ApplicationServices.GetService<Models.BlogDataContext>();
                 context.Database.EnsureDeleted();
@@ -62,14 +63,14 @@ namespace AspNetBlog
 
             app.UseIdentity();
 
-            if (config["debug"] == "true")
+            if (config.Get<bool>("debug"))
             {
-                app.UseErrorPage();
+                app.UseDeveloperExceptionPage();
                 app.UseRuntimeInfoPage();
             }
             else
             {
-                app.UseErrorHandler("/home/error");
+                app.UseExceptionHandler("/home/error");
             }
 
             app.UseMvc(routes => routes.MapRoute(
