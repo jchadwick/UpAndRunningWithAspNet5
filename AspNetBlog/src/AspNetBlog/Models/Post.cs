@@ -9,6 +9,7 @@ namespace AspNetBlog.Models
 {
     public class Post
     {
+        [Key]
         public long Id { get; set; }
 
         public string Key
@@ -21,6 +22,7 @@ namespace AspNetBlog.Models
                 var key = Regex.Replace(Title, @"[^a-zA-Z0-9\- ]", string.Empty);
                 return key.Replace(" ", "-").ToLower();
             }
+            set { }
         }
 
         [Required]

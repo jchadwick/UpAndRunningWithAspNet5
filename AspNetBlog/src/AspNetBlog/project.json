@@ -4,17 +4,17 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "Microsoft.AspNet.Server.WebListener": "1.0.0-beta8",
-    "Microsoft.AspNet.StaticFiles": "1.0.0-beta8",
-    "Microsoft.AspNet.Mvc": "6.0.0-beta8",
-    "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta8",
-    "EntityFramework.SqlServer": "7.0.0-beta8",
-    "Microsoft.AspNet.Diagnostics": "1.0.0-beta8",
-    "Microsoft.Framework.Configuration": "1.0.0-beta8",
-    "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8",
-    "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
-    "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
-    "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8"
+    "Microsoft.AspNet.Server.WebListener": "1.0.0-rc1",
+    "Microsoft.AspNet.StaticFiles": "1.0.0-rc1",
+    "Microsoft.AspNet.Mvc": "6.0.0-rc1",
+    "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-rc1",
+    "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1",
+    "Microsoft.AspNet.Diagnostics": "1.0.0-rc1",
+    "Microsoft.Extensions.Configuration": "1.0.0-rc1",
+    "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0-rc1",
+    "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1",
+    "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-rc1",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1"
   },
 
   "commands": {
