@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AspNetBlog.Models.Account
+namespace TieWeb.Models.Account
 {
     public class RegisterViewModel
     {

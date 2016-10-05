@@ -10,7 +10,7 @@ using Microsoft.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Extensions.PlatformAbstractions;
 
-namespace AspNetBlog
+namespace TieWeb
 {
     public class Startup
     {
@@ -31,9 +31,9 @@ namespace AspNetBlog
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddScoped<AspNetBlog.Models.BlogDataContext>();
-            services.AddScoped<AspNetBlog.Models.Identity.IdentityDataContext>();
-            services.AddTransient<AspNetBlog.Models.FormattingService>();
+            services.AddScoped<TieWeb.Models.BlogDataContext>();
+            services.AddScoped<TieWeb.Models.Identity.IdentityDataContext>();
+            services.AddTransient<TieWeb.Models.FormattingService>();
 
             string blogDataConnectionString = config["Data:BlogData:ConnectionString"];
             string identityConnectionString = config["Data:Identity:ConnectionString"];

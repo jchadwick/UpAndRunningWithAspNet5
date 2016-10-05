@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace AspNetBlog.Models
+namespace TieWeb.Models
 {
     public class Post
     {

@@ -1,0 +1,34 @@
+﻿@model TieWeb.Models.CoreDrive.CoreDriveWorkspace[]
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<table>
+    <tr><th>Id</th><th>Issue Name</th><th>Reference Number</th><th>Line of Business</th><th>Compliance Org Unit</th></tr>
+    @foreach (TieWeb.Models.CoreDrive.CoreDriveWorkspace ws in Model)
+    {
+        <tr>
+            <td>@ws.Id</td>
+            <td>@ws.IssueName</td>
+            <td>@ws.RefNumber</td>
+            <td>@ws.Lob</td>
+            <td>@ws.ComplianceOrgUnit</td>
+
+        </tr>
+
+    }
+</table>

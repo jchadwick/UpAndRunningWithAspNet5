@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
-using AspNetBlog.Models;
+using TieWeb.Models;
 using Microsoft.AspNet.Authorization;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace AspNetBlog.Controllers
+namespace TieWeb.Controllers
 {
     public class PostsController : Controller
     {
