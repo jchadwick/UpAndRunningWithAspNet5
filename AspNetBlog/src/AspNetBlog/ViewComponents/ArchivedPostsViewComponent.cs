@@ -3,16 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AspNetBlog.Models;
+using TieWeb.Models;
 
-namespace AspNetBlog.ViewComponents
+namespace TieWeb.ViewComponents
 {
     [ViewComponent]
     public class ArchivedPostsViewComponent : ViewComponent
     {
         private readonly BlogDataContext _db;
 
-        public ArchivedPostsViewComponent(AspNetBlog.Models.BlogDataContext db)
+        public ArchivedPostsViewComponent(TieWeb.Models.BlogDataContext db)
         {
             _db = db;
         }

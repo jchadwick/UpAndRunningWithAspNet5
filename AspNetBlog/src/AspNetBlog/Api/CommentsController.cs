@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AspNetBlog.Models;
+using TieWeb.Models;
 using Microsoft.AspNet.Mvc;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace AspNetBlog.Api
+namespace TieWeb.Api
 {
     [Route("api/posts/{postId:long}/comments")]
     public class CommentsController : Controller
     {
         private readonly BlogDataContext _db;
 
-        public CommentsController(AspNetBlog.Models.BlogDataContext db)
+        public CommentsController(TieWeb.Models.BlogDataContext db)
         {
 
             _db = db;

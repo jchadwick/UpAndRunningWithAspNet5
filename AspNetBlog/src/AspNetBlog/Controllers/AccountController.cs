@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
-using AspNetBlog.Models.Account;
-using AspNetBlog.Models.Identity;
+using TieWeb.Models.Account;
+using TieWeb.Models.Identity;
 using Microsoft.AspNet.Identity;
 
-namespace AspNetBlog.Controllers
+namespace TieWeb.Controllers
 {
     public class AccountController : Controller
     {
